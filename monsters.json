@@ -1,0 +1,12 @@
+monsters = {
+    "Slime" : {
+        "HP" : 5,
+        "ATK" : 2,
+        "DEF" : 0
+    },
+    "Skeleton" : {
+        "HP" : 15,
+        "ATK" : 5,
+        "DEF" : 2
+    },
+}

@@ -1,11 +1,14 @@
-// TODO: Implement page system for right side
-// TODO: Implement level system for monsters and heroes
+// TODO: Add more content to pages
+// TODO: Implement a system for hiring monsters
+// TODO: Implement a system for leveling monsters
+// TODO: Implement sign system for higher level/tier heroes
 // TODO: Implement upgrade system
 
 var dungeon = {
     gold : 10,
     exp : 0,
-    material : 0
+    material : 0,
+    floors : 1
 }
 
 var floor1 = {
@@ -14,19 +17,22 @@ var floor1 = {
             name : "Slime",
             HP : 5,
             ATK : 2,
-            DEF : 0
+            DEF : 0,
+            LVL : 1
         },
         1 : {
-            name: "Slime",
-            HP : 5,
-            ATK : 2,
-            DEF : 0
+            name: "---",
+            HP : 0,
+            ATK : 0,
+            DEF : 0,
+            LVL : 0
         },
         2 : {
-            name: "Slime",
-            HP : 5,
-            ATK : 2,
-            DEF : 0
+            name: "---",
+            HP : 0,
+            ATK : 0,
+            DEF : 0,
+            LVL : 0
         }
     },
     totalMonstersHP : 0,
@@ -39,25 +45,43 @@ var floor1 = {
             name: "Newb",
             HP : 10,
             ATK : 1,
-            DEF: 1
+            DEF: 1,
+            LVL : 1
         },
         1 : {
-            name: "Newb",
-            HP : 10,
-            ATK : 1,
-            DEF: 1
+            name: "---",
+            HP : 0,
+            ATK : 0,
+            DEF: 0,
+            LVL : 0
         },
         2 : {
-            name: "Newb",
-            HP : 10,
-            ATK : 1,
-            DEF: 1
+            name: "---",
+            HP : 0,
+            ATK : 0,
+            DEF: 0,
+            LVL : 0
         }
     },
     totalHeroesHP : 0,
     currentHeroesHP: 0,
     totalHeroesATK: 0,
     totalHeroesDEF: 0,
+}
+
+var collection = {
+    Slime : {
+        LVL : 1,
+        Assigned : 1
+    },
+    Slime : {
+        LVL : 1,
+        Assigned : 0
+    },
+    Slime : {
+        LVL : 1,
+        Assigned: 0
+    }
 }
 
 $(document).ready(initialize());
@@ -75,6 +99,10 @@ function main() {
 function initialize() {
     updateStats();
 
+    $(".dungeon").show();       //  The page always starts with dungeon open
+    $(".monsters").hide();
+    $(".recruit").hide();
+    
     main();
 }
 
@@ -120,10 +148,10 @@ function heroesDeath() {
 
     //  Update() functions
 
-
 function updateHTML() {
     updateResources();
     updateFloors();
+    updateUpgrades();
 }
 
 function updateResources() {
@@ -133,6 +161,15 @@ function updateResources() {
 }
 
 function updateStats() {
+    for (i = 0; i < 3; i++) {
+        floor1.monsters[i].HP = slimeHP(floor1.monsters[i].LVL);
+        floor1.monsters[i].ATK = slimeATK(floor1.monsters[i].LVL);
+        floor1.monsters[i].DEF = slimeDEF(floor1.monsters[i].LVL);
+        floor1.heroes[i].HP = newbHP(floor1.heroes[i].LVL);
+        floor1.heroes[i].ATK = newbATK(floor1.heroes[i].LVL);
+        floor1.heroes[i].DEF = newbDEF(floor1.heroes[i].LVL);
+    }
+
     for (i = 0; i < 3; i++) {
         floor1.totalMonstersHP += floor1.monsters[i].HP;
         floor1.totalHeroesHP += floor1.heroes[i].HP;
@@ -149,22 +186,6 @@ function updateStats() {
     if (floor1.currentHeroesHP == 0) {
         floor1.currentHeroesHP = floor1.totalHeroesHP;
     }
-
-    if (floor1.currentMonstersATK == 0) {
-        floor1.currentMonstersATK = floor1.totalMonstersATK;
-    }
-
-    if (floor1.currentHeroesATK == 0) {
-        floor1.currentHeroesATK = floor1.totalHeroesATK;
-    }
-
-    if (floor1.currentMonstersDEF == 0) {
-        floor1.currentMonstersDEF = floor1.totalMonstersDEF;
-    }
-
-    if (floor1.currentHeroesDEF == 0) {
-        floor1.currentHeroesDEF = floor1.totalHeroesDEF;
-    }
 }
 
 function updateFloors() {
@@ -172,6 +193,8 @@ function updateFloors() {
     for (i = 0; i < 3; i++) {
         $("#monster1-" + (i + 1)).text(floor1.monsters[i].name);
         $("#hero1-" + (i + 1)).text(floor1.heroes[i].name);
+        $("#monster1-" + (i + 1) + "-lvl").text("lv. " + floor1.monsters[i].LVL);
+        $("#hero1-" + (i + 1) + "-lvl").text("lv. " + floor1.heroes[i].LVL);
     }
         //  Update center
     var monsterside = formatNumber(floor1.currentMonstersHP);
@@ -187,6 +210,64 @@ function updateFloors() {
     $("#floor1-text").text(monsterside + " - " + heroside);
 }
 
+function updateUpgrades() {
+    newSigns();
+}
+
+function newSigns() {
+    if (dungeon.gold >= 100) {
+        $("#new-signs .upgrade-list button").removeClass("unavailable");
+        $("#new-signs .upgrade-list button").addClass("available");
+    }
+}
+
+        //  Page functions
+
+            //  Change to Dungeon
+$("#dungeon-button").click(function() {
+    $("#dungeon-button").addClass("selected");
+    $("#monsters-button").removeClass("selected");
+    $("#recruit-button").removeClass("selected");
+
+    $(".dungeon").show();
+    $(".monsters").hide();
+    $(".recruit").hide();
+});
+
+        //  Change to Monsters
+$("#monsters-button").click(function() {
+    $("#dungeon-button").removeClass("selected");
+    $("#monsters-button").addClass("selected");
+    $("#recruit-button").removeClass("selected");
+
+    $(".dungeon").hide();
+    $(".monsters").show();
+    $(".recruit").hide();
+
+    updateMonsterPanel();
+});
+
+        //  Change to Recruit
+$("#recruit-button").click(function() {
+    $("#dungeon-button").removeClass("selected");
+    $("#monsters-button").removeClass("selected");
+    $("#recruit-button").addClass("selected");
+
+    $(".dungeon").hide();
+    $(".monsters").hide();
+    $(".recruit").show();
+});
+
+function updateMonsterPanel() {
+    createMonstersElements();
+}
+
+function createMonstersElements() {
+    for (i = 0; i < collection.length; i++) {
+        $("<div id='monster-" + i + "' class='monster-box'").appendTo($("#monsters-container"));
+        containerBox.text("fukinlol");
+    }
+}
 
             //  --  Secondary functions --
 
@@ -199,7 +280,7 @@ function calculateEXP() {
 }
 
 function calculateMat() {
-    return Math.floor(Math.sqrt(floor1.totalHeroesHP + (2 * floor1.totalHeroesATK) + (floor1.totalHeroesDEF * floor1.totalHeroesDEF)));
+    return Math.floor(Math.sqrt(Math.sqrt(floor1.totalHeroesHP + (2 * floor1.totalHeroesATK) + (floor1.totalHeroesDEF * floor1.totalHeroesDEF))));
 }
 
 function displayPopup(id) {
@@ -216,7 +297,7 @@ function damageCalculation(attack, targetDefense) {
 }
 
 function formatNumber(input) {
-    var suffix = ["", "K", "M", "B", "T"];
+    var suffix = ["", "K", "M", "B", "T", "Q"];
     var index = 0;
     var inputAsString = "" + input;
     var retval = input;
@@ -231,7 +312,7 @@ function formatNumber(input) {
         }
         retval = "" + retval;
 
-        return retval.substring(0, 5) + suffix[index];
+        return retval.substring(0, 3) + suffix[index];
 
     } else if (input > 1000) {
         retval = "" + retval;
@@ -246,3 +327,5 @@ function formatNumber(input) {
 function randomize(min, max) {
     return Math.round(Math.random() * (max - min) + min);
 }
+
+    //  Hover functions

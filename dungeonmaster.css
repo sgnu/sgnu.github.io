@@ -11,7 +11,6 @@ body {
     background-color: #eeeeee;
     color: #000000bb;
     font-family: normal;
-    font-weight: 400;
     margin: 0;
     padding: 0;
     height: 100%;
@@ -26,22 +25,25 @@ body {
 }
 
 p {
+    font-size: 16px;
     margin: 0;
 }
 
 
 
 #left-container {
+    color: #000000CC;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     height: 100%;
-    width: 200px;
+    width: 150px;
 }
 
 #gold-container {
     align-items: center;
     display: flex;
-    margin-left: 25px;
+    margin-left: 10px;
 }
 
 #gold-color {
@@ -55,7 +57,7 @@ p {
 #exp-container {
     align-items: center;
     display: flex;
-    margin-left: 25px;
+    margin-left: 10px;
 }
 
 #exp-color {
@@ -69,7 +71,7 @@ p {
 #material-container {
     align-items: center;
     display: flex;
-    margin-left: 25px;
+    margin-left: 10px;
 }
 
 #material-color {
@@ -80,10 +82,29 @@ p {
     width: 15px;
 }
 
+#twitter {
+    align-items: center;
+    display: flex;
+    font-size: 14px;
+}
 
+#twitter img {
+    height: 32px;
+    width: 32px;
+}
+
+#twitter a {
+    color: #00000099;
+    text-decoration: none;
+}
+
+#twitter a:visited {
+    color: #00000099;
+    text-decoration: none;
+}
 
 #center-container {
-    background-color: #130027;
+    background-color: #101010;
     color: #ffffffee;
     flex-grow: 2;
 }
@@ -163,7 +184,61 @@ p {
     border-right: 1px solid #00000066;
 }
 
+#dungeon-upgrade-container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
 
+.dungeon-upgrade-box {
+    align-items: center;
+    display: flex;
+    margin-top: 25px;
+}
+
+.upgrade-icon {
+    border: 1px solid #000000cc;
+    height: 50px;
+    width: 50px;
+}
+
+.upgrade-list {
+    margin-left: 24px;
+}
+
+.dungeon-upgrade-box p {
+    width: 200px;
+}
+
+#monsters-container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.monster-floor {
+    margin-top: 25px;
+}
+
+button {
+    background-color: #00000000;
+    border: 2px solid #00aa00;
+    font-family: normal;
+    height: 20px;
+    text-decoration: none;
+}
+
+button.available:active {
+    background-color: #00aa00aa;
+}
+
+button.unavailable {
+    border: 2px solid #000000aa;
+}
+
+button.available {
+    border: 2px solid #00aa00aa;
+}
 
 .popup {
     font-size: 20px;
@@ -173,9 +248,11 @@ p {
 #floor1-mdamage {
     color: #dd0000;
     top: 7px;
+    display: none;
 }
 
 #floor1-hdamage {
-    color: #ffffff;
+    color: #42A5F5;
     top: 7px;
+    display: none;
 }

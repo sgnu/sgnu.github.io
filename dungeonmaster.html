@@ -6,6 +6,7 @@
         <link rel="stylesheet" type="text/css" href="dungeonmaster.css">
         <link href="https://fonts.googleapis.com/css?family=Dosis:400,700" rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <meta charset="UTF-8">
     </head>
 
     <body>
@@ -13,19 +14,27 @@
         <div id="container">
 
             <div id="left-container">
-                <div id="gold-container">
-                    <div id="gold-color"></div>
-                    <p id="gold">-- Gold</p>
+                <div>
+                    <div id="gold-container">
+                        <div id="gold-color"></div>
+                        <p id="gold">-- Gold</p>
+                    </div>
+
+                    <div id="exp-container">
+                        <div id="exp-color"></div>
+                        <p id="exp">-- EXP</p>
+                    </div>
+
+                    <div id="material-container">
+                        <div id="material-color"></div>
+                        <p id="material">-- Mat</p>
+                    </div>
                 </div>
 
-                <div id="exp-container">
-                    <div id="exp-color"></div>
-                    <p id="exp">-- EXP</p>
-                </div>
-
-                <div id="material-container">
-                    <div id="material-color"></div>
-                    <p id="material">-- Mat</p>
+                <div>
+                    <div id="twitter">
+                        <img src="Icons/SocialMedia/Twitter.png"><a href="https://twitter.com/yoB_e_maS" target="_blank">@yoB_e_maS</a>
+                    </div>
                 </div>
             </div>
 
@@ -61,7 +70,7 @@
                         </div>
                         <div id="hero1-3-container" class="hero">
                             <p id="hero1-3">--</p>
-                            <p id="hero1-2-lvl" class="lvl">lv. 1</p>
+                            <p id="hero1-3-lvl" class="lvl">lv. 1</p>
                         </div>
                     </div>
                 </div>
@@ -79,10 +88,27 @@
                         <p>Recruit</p>
                     </div>
                 </div>
+
+                <div id="dungeon-upgrade-container" class="dungeon">
+                    <div class="dungeon-upgrade-box" id="new-signs">
+                        <div class="upgrade-icon"></div>
+                        <div class="upgrade-list">
+                            <p>New Signs</p>
+                            <p>100 g</p>
+                            <button class="unavailable">Purchase</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="monsters-container" class="monsters">
+                    <p class="monster-floor">Floor 1</p>
+                </div>
             </div>
 
         </div>
 
+        <script src="heroFunctions.js"></script>
+        <script src="monsterFunctions.js"></script>
         <script src="dungeonmaster.js"></script>
 
         <h1 id="floor1-mdamage" class="popup">--</h1>
