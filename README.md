@@ -1,2 +1,2 @@
 # sgnu.github.io
-<a href="dungeonmaster.html">click here</a>
+<a href="dungeonmaster.html">Dungeon Master</a>
