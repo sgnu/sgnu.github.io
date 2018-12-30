@@ -1,0 +1,164 @@
+body {
+	background-color: #272727;
+	font-family: 'Staatliches';
+	margin: 0;
+	padding: 0;
+}
+
+button {
+	background-color: #00000000;
+	border: 2px solid #212122;
+	color: white;
+	font-family: 'Staatliches';
+	padding: 5px;
+}
+
+#center-container {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	left: 0;
+	margin-left: auto;
+	margin-right: auto;
+	position: absolute;
+	right: 0;
+	text-align: center;
+	top: 10%;
+	width: 200px;
+	z-index: 0;
+}
+
+#time {
+	color: white;
+	font-size: 64px;
+	margin: 0;
+	z-index: inherit;
+}
+
+#greeting {
+	color: white;
+	font-size: 32px;
+	margin: 0;
+	z-index: inherit;
+}
+
+#center-container input {
+	background-color: #212121;
+	border: none;
+	color: #F06292;
+	font-family: 'Staatliches';
+	font-size: 24px;
+	padding: 10px;
+	width: 125px;
+	z-index: 0;
+}
+
+ul {
+	align-self: flex-start;
+	color: #ffffffcc;
+	list-style-type: none;
+	margin-left: 40px;
+	padding: 0;
+	text-align: left;
+}
+
+a {
+	color: #ffffffcc;
+	font-size: 24px;
+	text-decoration: none;
+}
+
+a:visited {
+	text-decoration: none;
+}
+
+#add {
+	color: #ffffffcc;
+	cursor: pointer;
+	font-size: 24px;
+	top: 10px;
+	left: 15px;
+	margin: 0;
+	position: absolute;
+	z-index: 0;
+}
+
+#add-container {
+	align-items: center;	
+	background-color: #272727; 
+	box-shadow: 2px 2px 10px #00000069;
+	display: flex;
+	float: left;
+	flex-direction: column;
+	justify-content: space-evenly;
+	height: 225px;
+	margin-top: 40px;
+	margin-left: 40px;
+	width: 225px;
+	z-index: 1000;
+}
+
+#add-container input {
+	background-color: #212121;
+	border: none;
+	color: #64B5F6;
+	font-family: 'Staatliches';
+	padding: 10px;
+	width: 125px;
+	z-index: inherit;
+}
+
+#add-container p {
+	color: #ffffffcc;
+	margin: 0;
+	z-index: inherit;
+}
+
+#add-container button {
+	align-self: flex-end;
+	margin-right: 40px;
+	padding-left: 10px;
+	padding-right: 10px;
+	z-index: inherit;
+}
+
+#edit {
+	color: #ffffffcc;
+	cursor: pointer;
+	float: right;
+	position: absolute;
+	right: 15px;
+	top: 10px;
+}
+
+#edit-container {
+	display: flex;
+	flex-direction: column;
+	float: right;
+	font-family: 'Josefin Sans';
+	margin-top: 25px;
+	z-index: 100;
+}
+
+#edit-container div {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 10px;
+	z-index: inherit;
+}
+
+#edit-container div p {
+	color: #ffffffcc;
+	margin: 0;
+	z-index: inherit;
+}
+
+#edit-container div p:first-child {
+	color: #64B5F6;
+}
+
+#edit-container div button {
+	width: 50px;
+	z-index: inherit;
+}
