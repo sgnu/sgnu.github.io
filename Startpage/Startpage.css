@@ -40,6 +40,7 @@ button {
 	color: white;
 	font-size: 32px;
 	margin: 0;
+	margin-bottom: 10px;
 	z-index: inherit;
 }
 

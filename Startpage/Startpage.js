@@ -118,7 +118,6 @@ function updateEditList() {
 	});
 }
 
-
 $(document).ready(function() {
 	$("#add-container").hide();
 	$("#edit-container").hide();
