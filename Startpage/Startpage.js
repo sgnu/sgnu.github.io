@@ -50,6 +50,7 @@ function addSite() {
 	updateEditList();
 }
 
+//	Hit enter while adding a site
 $("#siteurl").keyup(function(event) {
 	if (event.keyCode === 13) {
 		if ($("#sitename").val() != "" && $("#siteurl").val() != "") {
@@ -58,9 +59,10 @@ $("#siteurl").keyup(function(event) {
 	}
 });
 
+//	Hit enter in the search bar
 $("#search").keyup(function(event) {
 	if (event.keyCode === 13) {
-		window.open($("#links li:first-child a").attr('href'));
+		window.open($("#links li:first-child a").attr('href'), "_self");
 	}
 })
 
