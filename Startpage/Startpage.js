@@ -25,12 +25,13 @@ function updateList(substring) {
 
 function openAdd() {
 	if (!addOpened) {
-		$("#add-container").fadeIn(500);
+		$("#add-container").fadeIn(300);
 		addOpened = !addOpened;
 		$("#sitename").focus();
 	} else {
-		$("#add-container").fadeOut(250);
+		$("#add-container").fadeOut(150);
 		addOpened = !addOpened;
+		$("#search").focus();
 	}
 }
 
@@ -57,12 +58,23 @@ $("#siteurl").keyup(function(event) {
 	}
 });
 
+$("#search").keyup(function(event) {
+	if (event.keyCode === 13) {
+		window.open($("#links li:first-child a").attr('href'));
+	}
+})
+
 function updateTime() {
 	var date = new Date($.now());
+	var month = date.getMonth();
+	var day = date.getDate();
+	var year = date.getFullYear();
 	var hour = date.getHours();
 	var min = date.getMinutes();
 	var sec = date.getSeconds();
 	var greeting = "";
+
+	var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
 	if (hour < 10) {
 		hour = "0" + hour;
@@ -88,17 +100,21 @@ function updateTime() {
 	}
 
 	var time = hour + ":" + min + ":" + sec;
+	var dateText = months[month] + " " + day + ", " + year;
 
 	$("#time").text(time);
 	$("#greeting").text(greeting);
+	$("#date").text(dateText)
 }
 
 function openEdit() {
 	if (!editOpened) {
-		$("#edit-container").fadeIn(500);
+		$("#edit-container").fadeIn(300);
+		$("#edit").animate({right: "375px"}, 200);
 		editOpened = !editOpened;
 	} else {
-		$("#edit-container").fadeOut(250);
+		$("#edit-container").fadeOut(150);
+		$("#edit").animate({right: "30px"}, 400);
 		editOpened = !editOpened;
 	}
 }
