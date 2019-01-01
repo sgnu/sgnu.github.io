@@ -46,7 +46,7 @@ button {
 #greeting {
 	color: white;
 	font-size: 32px;
-	margin: 0;
+	margin:	 0;
 	z-index: inherit;
 }
 
@@ -65,26 +65,32 @@ button {
 	font-family: 'Quicksand';
 	font-size: 24px;
 	padding: 10px;
-	width: 300px;
-	z-index: 0;
+	width: 380px;
+	z-index: -1;
 }
 
-ul {
+#links {
 	align-self: flex-start;
 	color: #ffffffcc;
-	list-style-type: none;
-	margin-left: 120px;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	height: 400px;
+	margin-top: 20px;
 	padding: 0;
-	text-align: left;
+	text-align: center;
+	width: 400px;
 }
 
 a {
 	color: rgb(189, 220, 245);
 	font-size: 24px;
 	text-decoration: none;
+	margin: 10px;
 }
 
-ul li:first-child a{
+#links a:first-child{
 	color: #64B5F6;
 }
 
@@ -106,16 +112,15 @@ a:visited {
 #add-container {
 	align-items: center;	
 	background-color: #272727; 
-	box-shadow: 2px 2px 10px #00000069;
+	box-shadow: 0px 0px 10px #00000069;
 	display: flex;
 	float: left;
-	flex-direction: column;
 	font-family: 'Quicksand';
 	justify-content: space-evenly;
-	height: 225px;
-	margin-top: 50px;
-	margin-left: 60px;
-	width: 225px;
+	height: 50px;
+	margin-top: 0px;
+	margin-left: 0px;
+	width: 500px;
 	z-index: 1000;
 }
 
@@ -136,10 +141,6 @@ a:visited {
 }
 
 #add-container button {
-	align-self: flex-end;
-	margin-right: 40px;
-	padding-left: 10px;
-	padding-right: 10px;
 	z-index: inherit;
 }
 
@@ -153,7 +154,7 @@ a:visited {
 }
 
 #edit-container {
-	box-shadow: 2px 2px 10px #00000069;
+	box-shadow: 0px 0px 10px #00000069;
 	display: flex;
 	flex-direction: column;
 	float: right;

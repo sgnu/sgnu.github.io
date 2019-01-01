@@ -6,21 +6,41 @@
 var addOpened = false;
 var editOpened = false;
 
+function compare(a, b) {
+	const itemA = a.name.toLowerCase();
+	const itemB = b.name.toLowerCase();
+
+	if (itemA > itemB){
+		return 1;
+	}
+	else if (itemA < itemB ) {
+		return -1;
+	} else {
+		return 0;
+	}
+}
+
 function initializeList() {
-	$.each(localStorage, function(key, value) {
-		if (localStorage.hasOwnProperty(key)) {
-			$("#links").append("<li><a href='" + value + "'>" + key + "</a></li>");
-		}
-	})
+	$("#links").html("");
+	updateList("");
 }
 
 function updateList(substring) {
 	$("#links").html("");
+	var links = [];
 	$.each(localStorage, function(key, value) {
 		if (key.toString().toLowerCase().includes(substring.toLowerCase()) && localStorage.hasOwnProperty(key)) {
-			$("#links").append("<li><a href='" + value + "'>" + key + "</a></li>");
+			link = {name: key,
+			url: value};
+			links.push(link);
 		}
 	});
+
+	links.sort(compare);
+	
+	for (var i = 0; i < links.length; i++) {
+		$("#links").append("<a href='" + links[i].url + "'>" + links[i].name + "</a>");
+	}
 }
 
 function openAdd() {
@@ -28,10 +48,12 @@ function openAdd() {
 		$("#add-container").fadeIn(300);
 		addOpened = !addOpened;
 		$("#sitename").focus();
+		$("#add").animate({top: "70px"}, 200);
 	} else {
 		$("#add-container").fadeOut(150);
 		addOpened = !addOpened;
 		$("#search").focus();
+		$("#add").animate({top: "20px"}, 400);
 	}
 }
 
@@ -62,7 +84,14 @@ $("#siteurl").keyup(function(event) {
 //	Hit enter in the search bar
 $("#search").keyup(function(event) {
 	if (event.keyCode === 13) {
-		window.open($("#links li:first-child a").attr('href'), "_self");
+		if ($("#links").children().length > 0) {
+			window.open($("#links a:first-child").attr('href'), "_self");
+		} else {
+			window.open("https://google.com/search?q=" + $("#search").val(), "_self");
+		}
+	} else if (event.keyCode === 27) {
+		$("#search").val("");
+		updateList("");
 	}
 })
 
@@ -129,11 +158,21 @@ function deleteSite(site) {
 
 function updateEditList() {
 	$("#edit-container").html("");
+	
+	var links = [];
 	$.each(localStorage, function(key, value) {
 		if (localStorage.hasOwnProperty(key)) {
-			$("#edit-container").append("<div><p>" + key + "</p><p>" + value + "</p><button type='button' onclick=deleteSite('" + key + "')>Delete</button>");
+			link = {name: key,
+			url: value};
+			links.push(link);
 		}
 	});
+
+	links.sort(compare);
+	
+	for (var i = 0; i < links.length; i++) {
+		$("#edit-container").append("<div><p>" + links[i].name + "</p><p>" + links[i].url + "</p><button type='button' onclick=deleteSite('" + links[i].name + "')>Delete</button>");
+	}
 }
 
 $(document).ready(function() {
