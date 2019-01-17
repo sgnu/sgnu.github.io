@@ -110,7 +110,6 @@ function updateTime() {
 	var year = date.getFullYear();
 	var hour = date.getHours();
 	var min = date.getMinutes();
-	var sec = date.getSeconds();
 	var greeting = "";
 
 	var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
@@ -123,9 +122,6 @@ function updateTime() {
 		min = "0" + min;
 	}
 
-	if (sec < 10) {
-		sec = "0" + sec;
-	}
 
 	if (hour > 0 && hour < 12) {
 		greeting = "Good Morning";
@@ -138,7 +134,7 @@ function updateTime() {
 		greeting = "Good Night";
 	}
 
-	var time = hour + ":" + min + ":" + sec;
+	var time = hour + ":" + min;
 	var dateText = months[month] + " " + day + ", " + year;
 
 	$("#time").text(time);
