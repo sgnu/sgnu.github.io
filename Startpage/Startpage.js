@@ -78,8 +78,18 @@ $("#siteurl").keyup(function(event) {
 		if ($("#sitename").val() != "" && $("#siteurl").val() != "") {
 			addSite();
 		}
+	} else if (event.keyCode === 27) {	//	Hit escape
+		openAdd();
 	}
 });
+
+//Hit escape while adding a site
+$("#sitename").keyup(function(event) {
+	if(event.keyCode === 27) {
+		openAdd();
+	}
+});
+
 
 //	Hit enter in the search bar
 $("#search").keyup(function(event) {
@@ -97,7 +107,7 @@ $("#search").keyup(function(event) {
 		} else {
 			window.open("https://google.com/search?q=" + $("#search").val(), "_self");
 		}
-	} else if (event.keyCode === 27) {
+	} else if (event.keyCode === 27) {	//	Hit escape instead of enter
 		$("#search").val("");
 		updateList("");
 	}
