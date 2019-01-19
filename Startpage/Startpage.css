@@ -60,7 +60,7 @@ button {
 
 #center-container input {
 	background-color: #212121;
-	border: none;
+	border-width: 0;
 	border-style: solid;
 	color: #F06292;
 	font-family: 'Quicksand';
