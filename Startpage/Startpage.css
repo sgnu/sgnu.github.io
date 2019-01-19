@@ -61,9 +61,11 @@ button {
 #center-container input {
 	background-color: #212121;
 	border: none;
+	border-style: solid;
 	color: #F06292;
 	font-family: 'Quicksand';
 	font-size: 24px;
+	margin-top: 2px;
 	padding: 10px;
 	width: 380px;
 	z-index: -1;

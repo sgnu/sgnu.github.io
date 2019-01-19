@@ -91,27 +91,49 @@ $("#sitename").keyup(function(event) {
 });
 
 
-//	Hit enter in the search bar
+//	typing in the search bar
 $("#search").keyup(function(event) {
 	if (event.keyCode === 13) {
 		if ($("#links").children().length > 0) {
 			window.open($("#links a:first-child").attr('href'), "_self");
-		} else if ($("#search").val().substring(0, 2) === "y ") {
-			window.open("https://youtube.com/search?q=" + $("#search").val().substring(2), "_self");
-		} else if ($("#search").val().includes(".")) {
-			if ($("#search").val().includes("http")) {
-				window.open($("#search").val(), "_self");
+		} else if ($(this).val().substring(0, 2) === "y ") {
+			window.open("https://youtube.com/search?q=" + $(this).val().substring(2), "_self");
+		} else if ($(this).val().substring(0, 2) === "g ") {
+			window.open("https://google.com/search?q=" + $(this).val().substring(2), "_self");
+		} else if ($(this).val().includes(".")) {
+			if ($(this).val().includes("http")) {
+				window.open($(this).val(), "_self");
 			} else {
-				window.open("https://" + $("#search").val(), "_self");
+				window.open("https://" + $(this).val(), "_self");
 			}
 		} else {
-			window.open("https://google.com/search?q=" + $("#search").val(), "_self");
+			window.open("https://google.com/search?q=" + $(this).val(), "_self");
 		}
 	} else if (event.keyCode === 27) {	//	Hit escape instead of enter
-		$("#search").val("");
+		$(this).val("");
 		updateList("");
 	}
-})
+
+	var stroke = $(this).css('border-width');
+	
+	if ($(this).val().substring(0,2) === "g ") {
+		$(this).css("border-color", '#77dd77').animate({
+			borderWidth: 2,
+			marginTop: 0
+		}, 100);
+	} else if ($(this).val().substring(0,2) === "y ") {
+		$(this).css("border-color", '#ff6961').animate({
+			borderWidth: 2,
+			marginTop: 0
+		}, 100);
+	} else if (stroke != "0px"){
+		$(this).animate({
+			borderWidth: 0,
+			marginTop: 2
+		}, 100);
+	}
+});
+
 
 function updateTime() {
 	var date = new Date($.now());
