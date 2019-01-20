@@ -93,21 +93,25 @@ $("#sitename").keyup(function(event) {
 
 //	typing in the search bar
 $("#search").keyup(function(event) {
+	var value = $(this).val();
+	
 	if (event.keyCode === 13) {
 		if ($("#links").children().length > 0) {
 			window.open($("#links a:first-child").attr('href'), "_self");
-		} else if ($(this).val().substring(0, 2) === "y ") {
-			window.open("https://youtube.com/search?q=" + $(this).val().substring(2), "_self");
-		} else if ($(this).val().substring(0, 2) === "g ") {
-			window.open("https://google.com/search?q=" + $(this).val().substring(2), "_self");
-		} else if ($(this).val().includes(".")) {
-			if ($(this).val().includes("http")) {
-				window.open($(this).val(), "_self");
+		} else if (value.substring(0, 2) === "y ") {
+			window.open("https://youtube.com/search?q=" + value.substring(2), "_self");
+		} else if (value.substring(0, 2) === "g ") {
+			window.open("https://google.com/search?q=" + value.substring(2), "_self");
+		} else if (value.substring(0,2)) {
+			window.open("https://reddit.com/" + value, "_self");
+		} else if (value.includes(".")) {
+			if (value.includes("http")) {
+				window.open(value, "_self");
 			} else {
-				window.open("https://" + $(this).val(), "_self");
+				window.open("https://" + value, "_self");
 			}
 		} else {
-			window.open("https://google.com/search?q=" + $(this).val(), "_self");
+			window.open("https://google.com/search?q=" + value, "_self");
 		}
 	} else if (event.keyCode === 27) {	//	Hit escape instead of enter
 		$(this).val("");
@@ -116,20 +120,25 @@ $("#search").keyup(function(event) {
 
 	var stroke = $(this).css('border-width');
 	
-	if ($(this).val().substring(0,2) === "g ") {
-		$(this).css("border-color", '#77dd77').animate({
-			borderWidth: 2,
+	if (value.substring(0,2) === "g ") {
+		$(this).css("border-color", '#7ddf64').animate({
+			borderWidth: 4,
 			marginTop: 0
 		}, 100);
-	} else if ($(this).val().substring(0,2) === "y ") {
-		$(this).css("border-color", '#ff6961').animate({
-			borderWidth: 2,
+	} else if (value.substring(0,2) === "y ") {
+		$(this).css("border-color", '#cc444b').animate({
+			borderWidth: 4,
 			marginTop: 0
 		}, 100);
+	} else if (value.substring(0, 2) === "r/") {
+		$(this).css("border-color", '#ff6f59').animate({
+			borderWidth: 4,
+			marginTop: 0
+		}, 100);	
 	} else if (stroke != "0px"){
 		$(this).animate({
 			borderWidth: 0,
-			marginTop: 2
+			marginTop: 4
 		}, 100);
 	}
 });
