@@ -102,7 +102,7 @@ $("#search").keyup(function(event) {
 			window.open("https://youtube.com/search?q=" + value.substring(2), "_self");
 		} else if (value.substring(0, 2) === "g ") {
 			window.open("https://google.com/search?q=" + value.substring(2), "_self");
-		} else if (value.substring(0,2)) {
+		} else if (value.substring(0,2) === "r/") {
 			window.open("https://reddit.com/" + value, "_self");
 		} else if (value.includes(".")) {
 			if (value.includes("http")) {
