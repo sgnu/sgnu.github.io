@@ -49,11 +49,15 @@ function openAdd() {
 		addOpened = !addOpened;
 		$("#sitename").focus();
 		$("#add").animate({top: "90px"}, 200);
+		$("#edit").fadeOut(200);
+
 	} else {
 		$("#add-container").fadeOut(150);
 		addOpened = !addOpened;
 		$("#search").focus();
 		$("#add").animate({top: "20px"}, 400);
+		$("#edit").fadeIn(200);
+
 	}
 }
 
@@ -189,10 +193,12 @@ function openEdit() {
 	if (!editOpened) {
 		$("#edit-container").fadeIn(300);
 		$("#edit").animate({right: "375px"}, 200);
+		$("#add").fadeOut(200);
 		editOpened = !editOpened;
 	} else {
 		$("#edit-container").fadeOut(150);
 		$("#edit").animate({right: "30px"}, 400);
+		$("#add").fadeIn(200);
 		editOpened = !editOpened;
 	}
 }
