@@ -48,7 +48,7 @@ function openAdd() {
 		$("#add-container").fadeIn(300);
 		addOpened = !addOpened;
 		$("#sitename").focus();
-		$("#add").animate({top: "70px"}, 200);
+		$("#add").animate({top: "90px"}, 200);
 	} else {
 		$("#add-container").fadeOut(150);
 		addOpened = !addOpened;
