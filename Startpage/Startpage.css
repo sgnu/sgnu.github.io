@@ -5,7 +5,7 @@ html {
 
 body {
 	background-color: #272727;
-	font-family: 'Quicksand';
+	font-family: 'Karla';
 	margin: 0;
 	height: 100vh;
 	padding: 0;
@@ -58,12 +58,12 @@ button {
 	z-index: inherit;
 }
 
-#center-container input {
+#search {
 	background-color: #212121;
 	border-width: 0;
 	border-style: solid;
 	color: #F06292;
-	font-family: 'Quicksand';
+	font-family: 'Karla';
 	font-size: 24px;
 	margin-top: 4px;
 	padding: 10px;
@@ -117,7 +117,7 @@ a:visited {
 	box-shadow: 0px 0px 10px #00000069;
 	display: flex;
 	float: left;
-	font-family: 'Quicksand';
+	font-family: 'Karla';
 	justify-content: space-evenly;
 	height: 50px;
 	margin-top: 0px;
@@ -130,7 +130,7 @@ a:visited {
 	background-color: #212121;
 	border: none;
 	color: #64B5F6;
-	font-family: 'Quicksand';
+	font-family: 'Karla';
 	padding: 10px;
 	width: 200px;
 	z-index: inherit;
@@ -161,11 +161,11 @@ a:visited {
 	display: flex;
 	flex-direction: column;
 	float: right;
-	font-family: 'Quicksand';
+	font-family: 'Karla';
 	min-height: 100vh;
 	padding: 0px 25px 0px 25px;
 	width: 300px;
-	z-index: 100;
+	z-index: 10;
 }
 
 #edit-container div {
@@ -177,7 +177,7 @@ a:visited {
 
 #edit-container div p {
 	color: #ffffffcc;
-	margin: 0;
+	margin: 5px 0 10px 0;
 	z-index: inherit;
 }
 
@@ -187,6 +187,7 @@ a:visited {
 
 #edit-container div p:first-child {
 	color: #64B5F6;
+	margin: 0;
 }
 
 #edit-container div button {

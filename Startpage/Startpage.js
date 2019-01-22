@@ -102,8 +102,8 @@ $("#search").keyup(function(event) {
 			window.open("https://youtube.com/search?q=" + value.substring(2), "_self");
 		} else if (value.substring(0, 2) === "g ") {
 			window.open("https://google.com/search?q=" + value.substring(2), "_self");
-		} else if (value.substring(0,2) === "r/") {
-			window.open("https://reddit.com/" + value, "_self");
+		} else if (value.substring(0,3) === "/r/") {
+			window.open("https://reddit.com" + value, "_self");
 		} else if (value.includes(".")) {
 			if (value.includes("http")) {
 				window.open(value, "_self");
@@ -116,6 +116,8 @@ $("#search").keyup(function(event) {
 	} else if (event.keyCode === 27) {	//	Hit escape instead of enter
 		$(this).val("");
 		updateList("");
+	} else if (event.keyCode === 9) {
+		event.preventDefault();
 	}
 
 	var stroke = $(this).css('border-width');
@@ -130,7 +132,7 @@ $("#search").keyup(function(event) {
 			borderWidth: 4,
 			marginTop: 0
 		}, 100);
-	} else if (value.substring(0, 2) === "r/") {
+	} else if (value.substring(0, 3) === "/r/") {
 		$(this).css("border-color", '#ff6f59').animate({
 			borderWidth: 4,
 			marginTop: 0
