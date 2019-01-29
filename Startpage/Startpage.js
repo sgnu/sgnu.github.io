@@ -181,7 +181,7 @@ function updateTime() {
 		greeting = "Good Night";
 	}
 
-	var time = hour + ":" + min;
+	var time = hour + "" + min;
 	var dateText = months[month] + " " + day + ", " + year;
 
 	$("#time").text(time);
