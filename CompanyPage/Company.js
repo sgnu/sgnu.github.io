@@ -29,18 +29,18 @@ $("#nav i").click(function() {
 
 $("#navOne").click(function() {
     $("html, body").animate({
-        scrollTop: $("#one").offset().top - 80
+        scrollTop: $("#one").offset().top - 120
     }, 400);
 });
 
 $("#navTwo").click(function() {
     $("html, body").animate({
-        scrollTop: $("#two").offset().top - 80
+        scrollTop: $("#two").offset().top - 120
     }, 400);
 });
 
 $("#navThree").click(function() {
     $("html, body").animate({
-        scrollTop: $("#three").offset().top - 80
+        scrollTop: $("#three").offset().top - 120
     }, 400);
 });
