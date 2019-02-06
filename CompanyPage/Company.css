@@ -193,7 +193,7 @@ h2 {
     color: #ffffff69;
 }
 
-@media (max-width: 400px) {
+@media (max-device-width: 400px) {
     #nav {
         flex-direction: column;
         justify-content: center;
@@ -224,7 +224,7 @@ h2 {
     }
 }
 
-@media (max-width: 400px) {
+@media (max-device-width: 400px) {
     .grid3Sec {
         grid-template-columns: 1fr;
     }
