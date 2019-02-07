@@ -4,7 +4,7 @@ $(window).scroll(function() {
 
     
     if (wScroll < wHeight) {
-        $("#heroImage h1").css("margin-bottom", (50 - wScroll / 6) + "px");
+        $("#heroImage h1").css("margin-bottom", (10 - (wScroll * 22 / wHeight)) + "vh");
     }
 
     $(".fadeFromLeft").each(function(i) {
