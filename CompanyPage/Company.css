@@ -1,5 +1,5 @@
 body {
-    background-color: #eeeeee;
+    background-color: #efefef;
 
     margin: 0;
     padding: 0;
@@ -26,8 +26,8 @@ a:link {
     align-items: center;
     
     width: 100vw;
-    height: 40px;
-    padding: 25px;
+    height: 32px;
+    padding: 15px 25px 15px 25px;
     padding-right: 25px;
     z-index: 100;
 }
@@ -55,7 +55,7 @@ a:link {
     padding: 5px;
     width: 60px;
 
-    transition: all 0.3s ease-in-out;
+    transition: all 0.2s ease-in-out;
 }
 
 #nav a:hover {
@@ -75,8 +75,8 @@ a:link {
 
     height: 100vh;
     width: 100vw;
-    padding-top: 20px;
-    padding-bottom: 20px;
+
+    overflow: hidden;
 }
 
 #heroImage h1 {
@@ -94,9 +94,25 @@ p {
     padding: 0;
 }
 
+p.fadedText {
+    color: #00000069;
+}
+
 h2 {
     margin: 0 auto 20px auto;
     margin-left: 25px;
+}
+
+.fadeFromLeft {
+    opacity: 0.05;
+    transform: translateX(-100px);
+    transition: all 0.9s ease-in-out;
+}
+
+.fadeFromRight {
+    opacity: 0.05;
+    transform: translateX(100px);
+    transition: all 0.9s ease-in-out;
 }
 
 .headShot {
@@ -146,7 +162,7 @@ h2 {
 .limit {
     overflow: hidden;
 
-    background-color: #eeeeee;
+    background-color: #efefef;
     font-family: 'Noto Serif';
     font-size: 1.2em;
     line-height: 1.6em;
@@ -167,21 +183,22 @@ h2 {
 }
 
 .full {
-    background-color: #eeeeee;
+    background-color: #efefef;
     width: 100%;
     margin-top: 20px;
 }
 
 #content {
-    background-color: #eeeeee;
+    background-color: #efefef;
     width: 100%;
     margin-bottom: 100px;
     padding-bottom: 25px;
+    box-shadow: 0px 10px 60px -5px #000000aa;
 }
 
 #footer {
     background-color: #424242;
-    color: #ffffff42;
+    color: #ffffff69;
     font-family: 'B612';
     line-height: 100px;
     text-align: center;
@@ -194,7 +211,11 @@ h2 {
 }
 
 #footer a {
-    color: #ffffff69;
+    color: #ffffffaa;
+}
+
+#footer a:hover {
+    color: #ffffffee
 }
 
 @media screen and (max-width: 920px) {
@@ -223,6 +244,11 @@ h2 {
 
     .grid3Sec {
         grid-template-columns: 1fr;
+        grid-gap: 25px;
         width: 100vw;
+    }
+
+    .grid3Sec > * {
+        width: 50vw;
     }
 }

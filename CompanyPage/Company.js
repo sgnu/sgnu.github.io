@@ -1,14 +1,38 @@
 $(window).scroll(function() {
     var wScroll = $(this).scrollTop();
+    var wHeight = $(this).height();
 
-    if (wScroll > $(".headShot").offset().top - ($(window).height() / 1.2)) {
+    
+    if (wScroll < wHeight) {
+        $("#heroImage h1").css("margin-bottom", (50 - wScroll / 6) + "px");
+    }
+
+    $(".fadeFromLeft").each(function(i) {
+        if (wScroll > $(".fadeFromLeft").eq(i).offset().top - (wHeight / 1.3)) {
+            $(".fadeFromLeft").eq(i).css({
+                opacity: "1",
+                transform: "translateX(0px)"
+            });
+        }
+    });
+
+    $(".fadeFromRight").each(function(i) {
+        if (wScroll > $(".fadeFromRight").eq(i).offset().top - (wHeight / 1.3)) {
+            $(".fadeFromRight").eq(i).css( {
+                opacity: "1",
+                transform: "translateX(0px)"
+            })
+        }
+    })
+    
+    if (wScroll > $(".headShot").offset().top - (wHeight / 1.2)) {
         $(".headShot").each(function(i) {
             setTimeout(function() {
                 $(".headShot").eq(i).addClass("isShowing")
             }, (150 * (i + 1)));
         });
-
     }
+
 });
 
 $("#navTitle").click(function() {
@@ -17,30 +41,34 @@ $("#navTitle").click(function() {
     }, 400);
 });
 
-$("#nav i").click(function() {
-    $("#nav a").toggle();
-
-    if ($("#nav").is("expanded")) {
-        $("#nav").removeClass("expanded");
-    } else {
-        $("#nav").addClass("expanded");
-    }
+$("#navAbout").click(function() {
+    $("html, body").animate({
+        scrollTop: $("#about").offset().top - getOffset()
+    }, 400);
 })
 
 $("#navOne").click(function() {
     $("html, body").animate({
-        scrollTop: $("#one").offset().top - 120
+        scrollTop: $("#one").offset().top - getOffset()
     }, 400);
 });
 
 $("#navTwo").click(function() {
     $("html, body").animate({
-        scrollTop: $("#two").offset().top - 120
+        scrollTop: $("#two").offset().top - getOffset()
     }, 400);
 });
 
 $("#navThree").click(function() {
     $("html, body").animate({
-        scrollTop: $("#three").offset().top - 120
+        scrollTop: $("#three").offset().top - getOffset()
     }, 400);
 });
+
+function getOffset() {
+    if ($(window).width() <= 920) {
+        return 10;
+    } else {
+        return 72;
+    }
+}
