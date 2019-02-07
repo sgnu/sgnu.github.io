@@ -197,7 +197,7 @@ h2 {
     color: #ffffff69;
 }
 
-@media only screen and (max-width: 920px) {
+@media screen and (max-width: 920px) {
     #nav {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
