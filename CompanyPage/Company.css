@@ -27,8 +27,7 @@ a:link {
     
     width: 100vw;
     height: 32px;
-    padding: 15px 25px 15px 25px;
-    padding-right: 25px;
+    padding: 16px 24px 16px 24px;
     z-index: 100;
 }
 
@@ -49,11 +48,11 @@ a:link {
     background-color: #ffffff00;
     border: white solid 2px;
     display: block;
-    margin-left: 15px;
+    margin-left: 16px;
     text-align: center;
 
     padding: 5px;
-    width: 60px;
+    width: 64px;
 
     transition: all 0.2s ease-in-out;
 }
@@ -82,11 +81,11 @@ a:link {
 #heroImage h1 {
     background-color: #212121;
     color: white;
-    font-size: 2.4em;
+    line-height: 48px;
     text-align: center;
 
     margin-bottom: 10vh;
-    padding: 25px;
+    padding: 16px;
 }
 
 p {
@@ -99,8 +98,8 @@ p.fadedText {
 }
 
 h2 {
-    margin: 0 auto 20px auto;
-    margin-left: 25px;
+    line-height: 32px;
+    margin: 0 24px 24px;
 }
 
 .fadeFromLeft {
@@ -128,18 +127,18 @@ h2 {
     font-family: 'Noto Serif';
     text-align: center;
 
-    width: 250px;
-    height: 300px;
+    width: 256px;
+    height: 320px;
     padding: 15px;
 
-    transition: all 0.45s ease-in-out;
+    transition: all 0.7s ease-in-out;
     opacity: 0;
-    transform: translateY(40px);
+    transform: translateY(100px);
 }
 
 .headShot .headShotImg {
-    width: 175px;
-    height: 175px;
+    width: 192px;
+    height: 192px;
     background-size: cover;
     border-radius: 50%;
 }
@@ -151,8 +150,8 @@ h2 {
 
 .grid3Sec {
     display: grid;
-    grid-template-columns: 300px 300px 300px;
-    grid-gap: 15px;
+    grid-template-columns: 320px 320px 320px;
+    grid-gap: 16px;
     justify-items: center;
     justify-content: center;
     margin-left: auto;
@@ -164,11 +163,10 @@ h2 {
 
     background-color: #efefef;
     font-family: 'Noto Serif';
-    font-size: 1.2em;
-    line-height: 1.6em;
+    line-height: 24px;
     text-align: justify;
     
-    max-width: 800px;
+    max-width: 768px;
     margin: 30px auto 0px auto;
     padding: 0 40px
 }
@@ -218,7 +216,7 @@ h2 {
     color: #ffffffee
 }
 
-@media screen and (max-width: 920px) {
+@media screen and (max-width: 1024px) {
     #nav {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(100px, 125px));
