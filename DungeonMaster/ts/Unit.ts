@@ -1,0 +1,3 @@
+interface Unit {
+  calcAggro(): number;
+}

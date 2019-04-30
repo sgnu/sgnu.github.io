@@ -13,8 +13,9 @@ body {
 
 button {
 	background-color: #00000000;
-	border: 2px solid #212122;
-	color: white;
+	border: 2px solid #ffffff10;
+	border-radius: 3px;
+	color: #ffffffa1;
 	cursor: pointer;
 	font-family: 'Staatliches';
 	padding: 5px;
@@ -37,21 +38,28 @@ button {
 }
 
 #time {
-	color: white;
+	color: #ffffffa1;
 	font-size: 64px;
 	margin: 0;
 	z-index: inherit;
 }
 
 #greeting {
-	color: white;
+	color: #ffffffa1;
 	font-size: 32px;
 	margin:	 0;
 	z-index: inherit;
 }
 
 #date {
-	color: #ffffffcc;
+	color: #ffffff69;
+	font-size: 18px;
+	margin: 0;
+	z-index: inherit;
+}
+
+#weather {
+	color: #ffffff69;
 	font-size: 18px;
 	margin: 0;
 	margin-bottom: 10px;
@@ -59,10 +67,10 @@ button {
 }
 
 #search {
-	background-color: #212121;
+	background-color: #ffffff10;
 	border-width: 0;
 	border-style: solid;
-	color: #ffffffcc;
+	color: #ffffffa1;
 	font-family: 'Barlow Semi Condensed';
 	font-size: 24px;
 	margin-top: 4px;
@@ -73,7 +81,6 @@ button {
 
 #links {
 	align-self: center;
-	color: #ffffffcc;
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
 	margin-top: 20px;
@@ -82,7 +89,7 @@ button {
 }
 
 a {
-	color: #ffffffaa;
+	color: #ffffffa1;
 	font-size: 24px;
 	text-decoration: none;
 	margin: 10px;
@@ -97,7 +104,7 @@ a:visited {
 }
 
 #add {
-	color: #ffffffcc;
+	color: #ffffffa1;
 	cursor: pointer;
 	font-size: 24px;
 	top: 20px;
@@ -110,7 +117,6 @@ a:visited {
 #add-container {
 	align-items: center;	
 	background-color: #272727; 
-	box-shadow: 0px 0px 10px #00000069;
 	display: flex;
 	float: left;
 	font-family: 'Barlow Semi Condensed';
@@ -123,8 +129,9 @@ a:visited {
 }
 
 #add-container input {
-	background-color: #212121;
-	border: none;
+	background-color: #ffffff10;
+  border: none;
+  border-radius: 5px;
 	color: #64B5F6;
 	font-family: 'Barlow Semi Condensed';
 	font-size: 20px;
@@ -135,7 +142,7 @@ a:visited {
 }
 
 #add-container p {
-	color: #ffffffcc;
+	color: #ffffffa1;
 	margin: 0;
 	z-index: inherit;
 }
@@ -145,7 +152,7 @@ a:visited {
 }
 
 #edit {
-	color: #ffffffcc;
+	color: #ffffffa1;
 	cursor: pointer;
 	float: right;
 	position: absolute;
@@ -156,7 +163,6 @@ a:visited {
 
 #edit-container {
 	background-color: #272727;
-	box-shadow: 0px 0px 10px #00000069;
 	display: flex;
 	flex-direction: column;
 	float: right;
@@ -175,7 +181,7 @@ a:visited {
 }
 
 #edit-container div p {
-	color: #ffffffcc;
+	color: #ffffffa1;
 	margin: 5px 0 10px 0;
 	z-index: inherit;
 }

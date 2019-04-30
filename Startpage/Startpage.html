@@ -1,45 +1,48 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<meta charset="UTF-8" />
-	<title>Welcome</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" media="screen" href="Startpage.css">
-	<link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed|Staatliches" rel="stylesheet"> 
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	
+  <meta charset="UTF-8" />
+  <title>Welcome</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="Startpage.css">
+  <link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed|Staatliches" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
-<body onload="initializeList()">
-	<div id="center-container">
-		<h1 id="time"></h1>
-		<h2 id="greeting"></h2>
-		<h3 id="date"></h3>
-		<input type="text" id="search" name="site" oninput="updateList(this.value)" autofocus>
-		<div id="links">
-		</div>
-	</div>
 
-	<i class="material-icons" id="add" onclick="openAdd()">add</i>
+<body>
+  <div id="center-container">
+    <h1 id="time"></h1>
+    <h2 id="greeting"></h2>
+    <h3 id="date"></h3>
+    <h3 id="weather"></h3>
+    <input type="text" id="search" name="site" oninput="updateList(this.value)" autofocus>
+    <div id="links">
+    </div>
+  </div>
 
-	<div id="add-container">
-		<p>Name</p>
-		<input type="text" id="sitename">
-		<p>URL</p>
-		<input type="text" id="siteurl">
-		<button type="button" onclick="addSite()">Add</button>
-	</div>
+  <i class="material-icons" id="add" onclick="openAdd()">add</i>
 
-	<i class="material-icons" id="edit" onclick="openEdit()">edit</i>
+  <div id="add-container">
+    <p>Name</p>
+    <input type="text" id="sitename">
+    <p>URL</p>
+    <input type="text" id="siteurl">
+    <button type="button" onclick="addSite()">Add</button>
+  </div>
 
-	<div id="edit-container">
-		<div>
-			<p>Reddit</p>
-			<p>https://reddit.com</p>
-			<button type="button">Delete</button>
-		</div>
-	</div>
+  <i class="material-icons" id="edit" onclick="openEdit()">edit</i>
 
-	<script src="Startpage.js"></script>
+  <div id="edit-container">
+    <div>
+      <p>Reddit</p>
+      <p>https://reddit.com</p>
+      <button type="button">Delete</button>
+    </div>
+  </div>
+
+  <script src="Startpage.js"></script>
 </body>
+
 </html>
