@@ -17,7 +17,12 @@
     <h2 id="greeting"></h2>
     <h3 id="date"></h3>
     <h3 id="weather"></h3>
-    <input type="text" id="search" name="site" oninput="updateList(this.value)" autofocus>
+    <div id="search-container">
+      <input type="text" id="search" name="site" oninput="updateList(this.value)" autofocus>
+      <div id="bar-container">
+        <div id="bar"></div>
+      </div>
+    </div>
     <div id="links">
     </div>
   </div>

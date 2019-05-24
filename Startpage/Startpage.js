@@ -87,12 +87,22 @@ $("#siteurl").keyup(function(event) {
 	}
 });
 
-//Hit escape while adding a site
+//  Hit escape while adding a site
 $("#sitename").keyup(function(event) {
 	if(event.keyCode === 27) {
 		openAdd();
 	}
 });
+
+
+//  Focus on search bar
+$("#search").focus(function() {
+  $("#bar-container").css("background-color", "#ffffff42");
+});
+  //  On release focus
+$("#search").focusout(function() {
+  $("#bar-container").css("background-color", "#ffffff10");
+})
 
 
 //	typing in the search bar
@@ -108,7 +118,9 @@ $("#search").keyup(function(event) {
 			window.open("https://google.com/search?q=" + value.substring(2), "_self");
 		} else if (value.substring(0,3) === "/r/") {
 			window.open("https://reddit.com" + value, "_self");
-		} else if (value.includes(".")) {
+    } else if (value.substring(0,2) === "m ") {
+      window.open("https://mangadex.org/search?title=" + value.substring(2), "_self");
+    } else if (value.includes(".")) {
 			if (value.includes("http")) {
 				window.open(value, "_self");
 			} else {
@@ -118,34 +130,25 @@ $("#search").keyup(function(event) {
 			window.open("https://google.com/search?q=" + value, "_self");
 		}
 	} else if (event.keyCode === 27) {	//	Hit escape instead of enter
-		$(this).val("");
+    $(this).val("");
+    value = $(this).val();
 		updateList("");
-	} else if (event.keyCode === 9) {
+	} else if (event.keyCode === 9) {   //  Hit tab
 		event.preventDefault();
 	}
 
-	var stroke = $(this).css('border-width');
-	
+  var width = $("#bar").css('width');
+
 	if (value.substring(0,2) === "g ") {
-		$(this).css("border-color", '#7ddf64').animate({
-			borderWidth: 4,
-			marginTop: 0
-		}, 100);
+		$("#bar").css("background-color", '#3FDAA4').css("width", "100%");
 	} else if (value.substring(0,2) === "y ") {
-		$(this).css("border-color", '#cc444b').animate({
-			borderWidth: 4,
-			marginTop: 0
-		}, 100);
+		$("#bar").css("background-color", '#EC6A88').css("width", "100%");
 	} else if (value.substring(0, 3) === "/r/") {
-		$(this).css("border-color", '#ff6f59').animate({
-			borderWidth: 4,
-			marginTop: 0
-		}, 100);	
-	} else if (stroke != "0px"){
-		$(this).animate({
-			borderWidth: 0,
-			marginTop: 4
-		}, 100);
+		$("#bar").css("background-color", '#FBC3A7').css("width", "100%");
+  } else if (value.substring(0, 2) === "m ") {
+    $("#bar").css("background-color", '#6BE4E6').css("width", "100%");
+  } else if (width != "0px"){
+		$("#bar").css("width", "0px");
 	}
 });
 
