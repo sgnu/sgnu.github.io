@@ -40,7 +40,7 @@ function updateList(substring) {
 	
 	for (var i = 0; i < links.length; i++) {
 		$("#links").append("<a href='" + links[i].url + "'>" + links[i].name + "</a>");
-	}
+  }
 }
 
 function openAdd() {
@@ -94,17 +94,6 @@ $("#sitename").keyup(function(event) {
 	}
 });
 
-
-//  Focus on search bar
-$("#search").focus(function() {
-  $("#bar-container").css("background-color", "#ffffff42");
-});
-  //  On release focus
-$("#search").focusout(function() {
-  $("#bar-container").css("background-color", "#ffffff10");
-})
-
-
 //	typing in the search bar
 $("#search").keyup(function(event) {
 	var value = $(this).val();
@@ -120,6 +109,10 @@ $("#search").keyup(function(event) {
 			window.open("https://reddit.com" + value, "_self");
     } else if (value.substring(0,2) === "m ") {
       window.open("https://mangadex.org/search?title=" + value.substring(2), "_self");
+    } else if (value.substring(0,3) === "wi ") {
+      window.open("https://en.wikipedia.org/w/index.php?search=" + value.substring(3), "_self");
+    } else if (value.substring(0,5) === "dict ") {
+      window.open("https://www.merriam-webster.com/dictionary/" + value.substring(5), "_self");
     } else if (value.includes(".")) {
 			if (value.includes("http")) {
 				window.open(value, "_self");
@@ -140,15 +133,19 @@ $("#search").keyup(function(event) {
   var width = $("#bar").css('width');
 
 	if (value.substring(0,2) === "g ") {
-		$("#bar").css("background-color", '#3FDAA4').css("width", "100%");
+		$("#bar").css("background", "linear-gradient(to right, #3FDAA4, #3FDAA410").css("width", "100%");
 	} else if (value.substring(0,2) === "y ") {
-		$("#bar").css("background-color", '#EC6A88').css("width", "100%");
+		$("#bar").css("background", "linear-gradient(to right, #EC6A88, #EC6A8810").css("width", "100%");
 	} else if (value.substring(0, 3) === "/r/") {
-		$("#bar").css("background-color", '#FBC3A7').css("width", "100%");
+		$("#bar").css("background", "linear-gradient(to right, #FBC3A7, #FBC3A710").css("width", "100%");
   } else if (value.substring(0, 2) === "m ") {
-    $("#bar").css("background-color", '#6BE4E6').css("width", "100%");
-  } else if (width != "0px"){
-		$("#bar").css("width", "0px");
+    $("#bar").css("background", "linear-gradient(to right, #6BE4E6, #6BE4E610").css("width", "100%");
+  } else if (value.substring(0, 3) === "wi ") {
+    $("#bar").css("background", "linear-gradient(to right, #FFFFFF, #FFFFFF10").css("width", "100%");
+  } else if (value.substring(0, 5) === "dict ") {
+    $("#bar").css("background", "linear-gradient(to right, #6BE4E6, #6BE4E610").css("width", "100%");
+  } else {
+    $("#bar").css("width", 0);
 	}
 });
 
@@ -184,7 +181,7 @@ function updateTime() {
 		greeting = "Good Night";
 	}
 
-	var time = hour + "" + min;
+	var time = hour + ":" + min;
 	var dateText = months[month] + " " + day + ", " + year;
 
 	$("#time").text(time);
@@ -236,12 +233,8 @@ function getWeather() {
 		const condition = data.weather[0].main;
 		const temperature = Math.round(data.main.temp);
 		console.log(data);
-
-
 		$("#weather").text(condition + " " + temperature + "F");
-
 	});
-
 }
 
 $(document).ready(function() {
@@ -253,6 +246,6 @@ $(document).ready(function() {
 	getWeather();
 	setTimeout(function() {
 		$("#search").focus();
-	}, 500);
-	setInterval(function() {updateTime()}, 1000);
+	}, 2000);
+  setInterval(function() {updateTime()}, 1000);
 });
