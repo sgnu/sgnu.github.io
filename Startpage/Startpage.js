@@ -229,7 +229,7 @@ function updateEditList() {
 }
 
 function getWeather() {
-	$.get("http://api.openweathermap.org/data/2.5/weather?zip=19120&appid=6b2d34c1fdae064a380bfb26b3d6af1a&units=imperial", (data) => {
+	$.get("https://api.openweathermap.org/data/2.5/weather?zip=19120&appid=6b2d34c1fdae064a380bfb26b3d6af1a&units=imperial", (data) => {
 		const condition = data.weather[0].main;
 		const temperature = Math.round(data.main.temp);
 		console.log(data);
