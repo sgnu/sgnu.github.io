@@ -1,22 +1,359 @@
 html, body {
   margin: 0;
   padding: 0;
+
+  font-family: sans-serif;
 }
 
-nav {
-  background-color: #272727;
+modal-parent {
+  background: #00000069;
 
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
+  position: fixed;
+
+  width: 100vw;
+  height: 100vh;
+
+  opacity: 0;
+  visibility: hidden;
+
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+  z-index: 100;
+}
+
+modal {
+  background: #efefef;
+  border-radius: 8px;
+  box-shadow: 0 8px 16px #00000042,
+  4px 16px 48px #00000021;
+
+  position: fixed;
+
+  overflow: hidden;
+
+  top: 48px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+
+  opacity: 0;
+  visibility: hidden;
+
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+  z-index: inherit;
+}
+
+modal .top {
+  background: white;
+
+  box-sizing: border-box;
 
   width: 100%;
-  height: 48px;
-  position: fixed;
+  height: 64px;
+  
+  padding: 0 32px;
 }
 
-#gold {
-  color: yellow;
+modal .top .title {
+  line-height: 64px;
 
-  margin-left: 24px;
+  float: left;
+
+  margin: 0;
+}
+
+modal .top .close {
+  cursor: pointer;
+  
+  line-height: 64px;
+
+  float: right;
+}
+
+modal .content {
+  padding: 32px;
+}
+
+#dungeon-monsters .floor {
+  display: flex;
+
+  justify-content: center;
+}
+
+modal .monster {
+  background: white;
+  box-shadow: 0 2px 8px #00000042;
+  cursor: pointer;
+
+  text-align: center;
+
+  margin-right: 32px;
+  padding: 16px;
+}
+
+modal .monster:last-child {
+  margin: 0;
+}
+
+modal .monster div {
+  margin-top: 4px;
+}
+
+modal .monster .name {
+  font-weight: 550;
+  font-size: 24px;
+
+  margin-top: 0px;
+  margin-bottom: 8px;
+}
+
+#dungeon-monsters .monster .empty {
+  font-weight: 550;
+  font-size: 24px;
+
+  margin: 50% auto;
+}
+
+#market .content {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+
+  overflow-y: scroll;
+  height: inherit;
+}
+
+#market #refresh-container {
+  grid-column-end: span 2;
+}
+
+#market #refresh-timer {
+  float: left;
+}
+
+#market #refresh-button {
+  background: #272727;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+
+  float: right;
+
+  padding: 8px;
+}
+
+#market #refresh-button.disabled {
+  background: #606060;
+  color: #a1a1a1;
+  cursor: default;
+}
+
+#market .monster {
+  justify-self: center;
+
+  width: 128px;
+  margin: 0;
+}
+
+content-grid {
+  display: grid;
+
+  grid-template-columns: auto 256px;
+
+  width: 100vw;
+  height: 100vh;
+}
+
+menu {
+  display: flex;
+
+  flex-direction: column;
+
+  overflow-y: scroll;
+
+  padding: 8px;
+  margin: 0;
+}
+
+menu gold {
+  text-align: right;
+
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+menu nav {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+}
+
+menu .divider {
+  background: linear-gradient(90deg, #00000000 0%, #00000042 20%, #00000042 80%, #00000000 100%);
+
+  width: 90%;
+  height: 1px;
+  margin: 8px auto;
+}
+
+menu .button {
+  border-radius: 4px;
+  cursor: pointer;
+
+  text-align: center;
+  
+  transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+menu #open-market {
+  background: #272727;
+  color: white;
+
+  text-align: center;
+
+  padding: 8px 0;
+
+  margin-bottom: 8px;
+}
+
+menu #open-market:hover {
+  background: #999999;
+}
+
+menu .name {
+  font-weight: 550;
+  font-size: 24px;
+
+  float: left;
+}
+
+menu monster div:nth-child(3) {
+  clear: both;
+}
+
+menu .add-button {
+  background: #272727;
+  color: white;
+
+  float: right;
+
+  padding: 4px 8px;
+}
+
+menu .add-button:hover {
+  background: #999999;
+}
+
+menu .sell-button {
+  background: #ee3333;
+  color: white;
+
+  margin-bottom: 8px;
+  padding: 4px 8px;
+}
+
+menu .sell-button:hover {
+  background: #ff9999;
+}
+
+navitem {
+  cursor: pointer;
+
+  line-height: 32px;
+  text-align: center;
+
+  height: 32px;
+
+  transition: background 0.3s ease-in-out;
+}
+
+navitem:hover {
+  background: #00000042;
+}
+
+dungeon {
+  background: #eee;
+
+  display: flex;
+  
+  align-items: center;
+  flex-direction: column;
+
+  padding: 32px;
+
+  overflow: scroll;
+}
+
+.floor {
+  display: flex;
+
+  flex-wrap: wrap;
+}
+
+.spacer {
+  text-align: center;
+}
+
+.unit {
+  background: white;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px #00000042,
+              4px 8px 16px #00000021;
+
+  display: flex;
+  
+  flex-direction: column;
+  align-items: center;
+
+  overflow: hidden;
+
+  width: 128px;
+  height: 128px;
+  margin-bottom: 8px;
+  margin-left: 32px;
+  padding: 0;
+}
+
+.unit > name {
+  background: linear-gradient(128deg, #272727, #32324a);
+  color: white;
+
+  text-align: center;
+  line-height: 32px;
+
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+.unit .bar {
+  border: 1px solid #6699ff;
+
+  width: 80%;
+  height: 6px;
+  padding: 1px;
+}
+
+.unit .progress {
+  background: #6699ff;
+  height: 100%;
+
+  transition: width 0.25s cubic-bezier(0, 0, 0.085, 1);
+}
+
+.unit > damage {
+  z-index: 1;
+  margin-top: 4px;
+}
+
+.unit:first-child {
+  margin-left: 0;
+}
+
+.blank {
+  width: 128px;
+  margin-left: 32px;
+}
+
+.spacer {
+  width: 96px;
 }

@@ -1,22 +1,71 @@
 <!DOCTYPE html>
-<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link href="style.css" type="text/css" rel="stylesheet">
   <title>Dungeon Master</title>
+  <script src="js/jquery-3.4.1.min.js"></script>
 </head>
 <body>
 
-  <nav>
-    <num id="gold">20 g</num>
-  </nav>
+  <modal-parent>
+      <modal style="width: 800px" id="dungeon-monsters">
+        <div class="top">
+          <h1 class="title">Dungeon</h1>
+          <div onclick="hideModal('dungeon-monsters')" class="close">Close</div>
+        </div>
 
-  <div style="height: 2000px"></div>
+        <div class="content">
+        </div>
+      </modal>
+
+      <modal style="width: 800px" id="market">
+        <div class="top">
+          <h1 class="title">Market</h1>
+          <div onclick="hideModal('market')" class="close">Close</div>
+        </div>
+
+        <div class="content">
+
+        </div>
+      </modal>
+  </modal-parent>
+
+  <content-grid>
+    <dungeon>
+    </dungeon>
+    <menu>
+      <gold></gold>
+      <nav>
+        <navitem>Monsters</navitem>
+        <navitem>Dungeon</navitem>
+      </nav>
+
+      <div class="divider"></div>
+
+      <div id="open-market" class="button">Market</div>
+
+      <monster-list>
+      </monster-list>
+      
+      <button id="stop">Stop</button>
+      <button id="modalTest">Show Modal</button>
+      <button id="addSlime">Add slime</button>
+    </menu>
+  </content-grid>
+
   
+  
+  <script src="js/utils.js"></script>
   <script src="js/Unit.js"></script>
-  <script src="js/Monsters.js"></script>
+  <script src="js/Monster.js"></script>
+  <script src="js/Hero.js"></script>
+  <script src="js/Floor.js"></script>
+  <script src="js/Dungeon.js"></script>
+  <script src="js/Market.js"></script>
+
+  <script src="js/main.js"></script>
   <script src="js/test.js"></script>
 </body>
 </html>
