@@ -1,4 +1,4 @@
-const dungeon = new Dungeon();
+let dungeon = new Dungeon();
 const newFloor = new Floor();
 
 dungeon.floors.push(newFloor);
@@ -41,6 +41,25 @@ $('#modalTest').click(() => {
 
 $('#addSlime').click(() => {
   dungeon.addToReserves(new Slime(1));
+})
+
+$('#save').click(() => {
+  Dungeon.saveGame(dungeon);
+})
+
+$('#load').click(() => {
+  const oldGame: Dungeon = JSON.parse(Dungeon.loadGame());
+  
+  if (oldGame != null) {
+    dungeon.market = oldGame.market;
+    dungeon.floors = oldGame.floors;
+    dungeon.gold = oldGame.gold;
+    dungeon.reserves = oldGame.reserves;
+    
+    dungeon.calcRating();
+
+    initDungeon(dungeon);
+  }
 })
 
 // setTimeout(() => {

@@ -174,6 +174,17 @@ var Dungeon = /** @class */ (function () {
             }
         });
     };
+    Dungeon.saveGame = function (dungeon) {
+        localStorage.setItem('dungeon', JSON.stringify(dungeon));
+    };
+    Dungeon.loadGame = function () {
+        if (localStorage.getItem('dungeon') != null) {
+            return localStorage.getItem('dungeon');
+        }
+        else {
+            return null;
+        }
+    };
     return Dungeon;
 }());
 //# sourceMappingURL=Dungeon.js.map

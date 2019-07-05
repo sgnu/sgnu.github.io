@@ -31,6 +31,20 @@ $('#modalTest').click(function () {
 $('#addSlime').click(function () {
     dungeon.addToReserves(new Slime(1));
 });
+$('#save').click(function () {
+    Dungeon.saveGame(dungeon);
+});
+$('#load').click(function () {
+    var oldGame = JSON.parse(Dungeon.loadGame());
+    if (oldGame != null) {
+        dungeon.market = oldGame.market;
+        dungeon.floors = oldGame.floors;
+        dungeon.gold = oldGame.gold;
+        dungeon.reserves = oldGame.reserves;
+        dungeon.calcRating();
+        initDungeon(dungeon);
+    }
+});
 // setTimeout(() => {
 //   fight(thisDungeon);
 //   updateDungeon(thisDungeon);
