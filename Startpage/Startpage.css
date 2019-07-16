@@ -7,6 +7,41 @@ body {
 	padding: 0;
 }
 
+#modal {
+  background: #ffffff;
+  border-radius: 8px;
+  box-sizing: border-box;
+
+  overflow: hidden;
+  
+  position: fixed;
+
+  width: 400px;
+  top: 48px;
+  left: 50%;
+  margin-left: -200px;
+
+  z-index: 100;
+
+  /* transition: visibility 0.2s ease-in-out, opacity 0.2s ease-in-out; */
+}
+
+#modal .head {
+  background: #272727;
+  color: white;
+
+  text-align: center;
+  padding: 8px 0;
+}
+
+#modal ul {
+  list-style-type: none;
+
+  line-height: 24px;
+
+  margin: 16px;
+}
+
 button {
 	background-color: #ffffff00;
 	border: 2px solid #27272710;

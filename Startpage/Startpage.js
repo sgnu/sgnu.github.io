@@ -136,6 +136,12 @@ $("#search").keyup(function(event) {
 
   var width = $("#bar").css('width');
 
+  if (value === "help") {
+    $("#modal").fadeIn(200);
+  } else {
+    $("#modal").fadeOut(200);
+  }
+
 	if (value.substring(0,2) === "g ") {
 		$("#bar").css("background", "linear-gradient(to right, #a3be8c, #a3be8c10").css("width", "100%");
 	} else if (value.substring(0,2) === "y ") {
@@ -246,7 +252,8 @@ function getWeather() {
 
 $(document).ready(function() {
 	$("#add-container").hide();
-	$("#edit-container").hide();
+  $("#edit-container").hide();
+  $("#modal").hide();
 	initializeList();
 	updateTime();
 	updateEditList();
