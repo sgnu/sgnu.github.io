@@ -113,7 +113,11 @@ $("#search").keyup(function(event) {
       window.open("https://en.wikipedia.org/w/index.php?search=" + value.substring(3), "_self");
     } else if (value.substring(0,5) === "dict ") {
       window.open("https://www.merriam-webster.com/dictionary/" + value.substring(5), "_self");
-    } else if (value.includes(".")) {
+    } else if (value.substring(0,3) === "wa ") {
+      window.open("https://www.wolframalpha.com/input/?i=" + value.substring(3), "_self");
+    } else if (value.length > 1 && value[0] === "/" && value[value.length - 1] === "/") {
+			window.open("https://boards.4channel.org/" + value.substring(1, value.length - 1), "_self");
+		} else if (value.includes(".")) {
 			if (value.includes("http")) {
 				window.open(value, "_self");
 			} else {
@@ -133,18 +137,22 @@ $("#search").keyup(function(event) {
   var width = $("#bar").css('width');
 
 	if (value.substring(0,2) === "g ") {
-		$("#bar").css("background", "linear-gradient(to right, #3FDAA4, #3FDAA410").css("width", "100%");
+		$("#bar").css("background", "linear-gradient(to right, #a3be8c, #a3be8c10").css("width", "100%");
 	} else if (value.substring(0,2) === "y ") {
-		$("#bar").css("background", "linear-gradient(to right, #EC6A88, #EC6A8810").css("width", "100%");
+		$("#bar").css("background", "linear-gradient(to right, #bf616a, #bf616a10").css("width", "100%");
 	} else if (value.substring(0, 3) === "/r/") {
-		$("#bar").css("background", "linear-gradient(to right, #FBC3A7, #FBC3A710").css("width", "100%");
+		$("#bar").css("background", "linear-gradient(to right, #d08770, #d0877010").css("width", "100%");
   } else if (value.substring(0, 2) === "m ") {
-    $("#bar").css("background", "linear-gradient(to right, #6BE4E6, #6BE4E610").css("width", "100%");
+    $("#bar").css("background", "linear-gradient(to right, #5e81ac, #5e81ac10").css("width", "100%");
   } else if (value.substring(0, 3) === "wi ") {
-    $("#bar").css("background", "linear-gradient(to right, #FFFFFF, #FFFFFF10").css("width", "100%");
+    $("#bar").css("background", "linear-gradient(to right, #eceff4, #eceff410").css("width", "100%");
   } else if (value.substring(0, 5) === "dict ") {
-    $("#bar").css("background", "linear-gradient(to right, #6BE4E6, #6BE4E610").css("width", "100%");
-  } else {
+    $("#bar").css("background", "linear-gradient(to right, #5e81ac, #5e81ac10").css("width", "100%");
+  } else if (value.substring(0, 3) === "wa ") {
+    $("#bar").css("background", "linear-gradient(to right, #bf616a, #bf616a10").css("width", "100%");
+  } else if (value.length > 1 && value[0] === "/" && value[value.length - 1] === "/") {
+		$("#bar").css("background", "linear-gradient(to right, #a3be8c, #a3be8c10").css("width", "100%");
+	} else {
     $("#bar").css("width", 0);
 	}
 });
@@ -168,7 +176,6 @@ function updateTime() {
 	if (min < 10) {
 		min = "0" + min;
 	}
-
 
 	if (hour > 0 && hour < 12) {
 		greeting = "Good Morning";
@@ -244,8 +251,5 @@ $(document).ready(function() {
 	updateTime();
 	updateEditList();
 	getWeather();
-	setTimeout(function() {
-		$("#search").focus();
-	}, 2000);
   setInterval(function() {updateTime()}, 1000);
 });

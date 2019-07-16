@@ -1,10 +1,6 @@
-html {
-	height: 100vh;
-	position: relative;
-}
 
 body {
-	background-color: #1C1E26;
+	background-color: #efefef;
 	font-family: 'Barlow Semi Condensed';
 	margin: 0;
 	height: 100vh;
@@ -12,13 +8,19 @@ body {
 }
 
 button {
-	background-color: #00000000;
-	border: 2px solid #ffffff10;
+	background-color: #ffffff00;
+	border: 2px solid #27272710;
 	border-radius: 3px;
-	color: #ffffffa1;
+	color: #272727;
 	cursor: pointer;
 	font-family: 'Staatliches';
-	padding: 5px;
+  padding: 5px;
+  transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+  background-color: #ffffff10;
+  border-color: #ffffff20;
 }
 
 input:focus {
@@ -42,7 +44,7 @@ input:focus {
 }
 
 #time {
-	color: #ffffffb9;
+	color: #272727;
   font-size: 64px;
   line-height: 64px;
 	margin: 0;
@@ -50,7 +52,7 @@ input:focus {
 }
 
 #greeting {
-	color: #ffffffb9;
+	color: #272727;
   font-size: 32px;
   line-height: 32px;
 	margin:	 0;
@@ -58,14 +60,14 @@ input:focus {
 }
 
 #date {
-	color: #ffffff69;
+	color: #272727a1;
 	font-size: 18px;
 	margin: 0;
 	z-index: inherit;
 }
 
 #weather {
-	color: #ffffff69;
+	color: #272727a1;
 	font-size: 18px;
 	margin: 0;
 	margin-bottom: 10px;
@@ -81,7 +83,7 @@ input:focus {
 	background-color: #ffffff00;
 	border-width: 0;
 	border-style: solid;
-	color: #ffffffa1;
+	color: #272727;
 	font-family: 'Barlow Semi Condensed';
 	font-size: 24px;
 	margin: 0px;
@@ -119,14 +121,14 @@ input:focus {
 }
 
 a {
-  color: #ffffffa1;
+  color: #272727a1;
 	font-size: 24px;
 	text-decoration: none;
 	margin: 10px;
 }
 
 #links a:first-child{
-	color: #59E1E3;
+	color: #88c0d0;
 }
 
 a:visited {
@@ -134,7 +136,7 @@ a:visited {
 }
 
 #add {
-	color: #ffffffa1;
+	color: #272727a1;
 	cursor: pointer;
 	font-size: 24px;
 	top: 20px;
@@ -146,7 +148,7 @@ a:visited {
 
 #add-container {
 	align-items: center;	
-	background-color: #232530; 
+	background-color: #efefef; 
 	display: flex;
 	float: left;
 	font-family: 'Barlow Semi Condensed';
@@ -159,10 +161,10 @@ a:visited {
 }
 
 #add-container input {
-	background-color: #ffffff10;
+	background-color: #27272710;
   border: none;
   border-radius: 5px;
-	color: #ffffffaf;
+	color: #272727;
 	font-family: 'Barlow Semi Condensed';
 	font-size: 20px;
 	padding: 4px;
@@ -172,7 +174,7 @@ a:visited {
 }
 
 #add-container p {
-	color: #ffffffa1;
+	color: #272727a1;
 	margin: 0;
 	z-index: inherit;
 }
@@ -182,7 +184,7 @@ a:visited {
 }
 
 #edit {
-	color: #ffffffa1;
+	color: #272727a1;
 	cursor: pointer;
 	float: right;
 	position: absolute;
@@ -192,7 +194,7 @@ a:visited {
 }
 
 #edit-container {
-	background-color: #232530;
+	background-color: #efefef;
 	display: flex;
 	flex-direction: column;
 	float: right;
@@ -211,7 +213,7 @@ a:visited {
 }
 
 #edit-container div p {
-	color: #ffffffa1;
+	color: #272727a1;
 	margin: 5px 0 10px 0;
 	z-index: inherit;
 }
@@ -221,7 +223,7 @@ a:visited {
 }
 
 #edit-container div p:first-child {
-	color: #64B5F6;
+	color: #88c0d0;
 	margin: 0;
 }
 
