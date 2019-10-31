@@ -1,0 +1,6 @@
+{
+  "plugins": [
+    "jquery"
+  ],
+  "extends": "airbnb-base"
+}
