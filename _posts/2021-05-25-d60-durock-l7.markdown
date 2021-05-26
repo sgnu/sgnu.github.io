@@ -1,0 +1,30 @@
+
+---
+layout: post
+title: "KBDFans D60"
+date: 2021-05-25
+categories: keyboard
+---
+
+[Check out my sound test.][sound-test] The D60 is a few of my firsts: first higher end board, first HHKB layout, first gasket mount board. Overall, I think this board is pretty solid but has a couple of issues. 
+
+While this board is gasket mount, the foam strip gaskets are compressed so tightly that there's barely any give to allow the plate to flex. I've tried to do as much as possible to allow for some flex (with a flexible plate material and only using some of the gasket strips) in the plate and it's still very stiff. The board also seems to mute switch sounds somewhat (I'm not sure what causes it though). However, thats not necessarily a con (I personally prefer relatively muted switches).
+
+I've had some issues with the USB port while closing the case up: the port doesn't line up properly when I leave the plate/PCB assembly sitting on the gaskets. I've resorted to sticking the USB port into the cutout (effectively making it a mounting point), which has sometimes caused my escape keycap to slightly rub against the case.
+
+However, I still think this keyboard is great option, especially in its price category and given KBDFans' (as far as I can tell) plans to keep it as an in-stock item. The build quality is quite a step up from the ~$100 boards I own, with hardly any noticeable blemishes in the exterior finish. The gaskets, while not providing any flex, makes the sound much more consistent than tray mounting. The sound of this board is exactly my preference leaning towards a lower pitch. With most premium groupbuy boards being a fair bit more expensive, the D60 occupies a niche as a premium, in-stock board that's relatively inexpensive.
+
+**TODO: add pictures**
+
+## Build Details
+
+- Plate: FR4 Plate 
+    - no standoffs and only 4 foam strips installed per side
+- Switches: Durock L7
+    - Stems and housings lubed with 205g0
+    - Sprit MX Supreme 72 S springs bag lubed with 105
+- Stabilizers: C3Equalz stabs lubed with 205g0 and Super Lube
+- Keycaps: Drop Artifact Bloom BoW
+- No foam
+
+[sound-test]: https://youtu.be/a2-si0GKc4U
