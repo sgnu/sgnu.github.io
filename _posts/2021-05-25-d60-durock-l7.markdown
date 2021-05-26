@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "KBDFans D60"
-date: 2021-05-25
+date: 2021-05-25 00:00 -0400
 categories: keyboard
 ---
 [Check out my sound test.][sound-test] The D60 is a few of my firsts: first higher end board, first HHKB layout, first gasket mount board. Overall, I think this board is pretty solid but has a couple of issues. 
