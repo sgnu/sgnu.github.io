@@ -1,11 +1,9 @@
-
 ---
 layout: post
 title: "KBDFans D60"
 date: 2021-05-25
 categories: keyboard
 ---
-
 [Check out my sound test.][sound-test] The D60 is a few of my firsts: first higher end board, first HHKB layout, first gasket mount board. Overall, I think this board is pretty solid but has a couple of issues. 
 
 While this board is gasket mount, the foam strip gaskets are compressed so tightly that there's barely any give to allow the plate to flex. I've tried to do as much as possible to allow for some flex (with a flexible plate material and only using some of the gasket strips) in the plate and it's still very stiff. The board also seems to mute switch sounds somewhat (I'm not sure what causes it though). However, thats not necessarily a con (I personally prefer relatively muted switches).
